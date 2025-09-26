@@ -11,7 +11,7 @@
 ## Project Overview
 A responsive **Digital Business Card** built with **HTML, CSS, JavaScript, jQuery, and Bootstrap**. Displays contact info, social links, and a QR code, combining modern UI with interactive features.  
 
-**Live Demo:** [View Project Here]()
+**Live Demo:** [View Project Here](https://adityam626.github.io/Digital_Business_Card/)
 
 ---
 
