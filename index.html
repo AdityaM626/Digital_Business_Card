@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Engineer Business Card</title>
+
+  <!-- Bootstrap & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- QRCode Library -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+</head>
+<body>
+  <button class="toggle-btn" onclick="toggleMode()">🌙 Dark Mode</button>
+
+  <div class="business-card">
+    <div class="card-header">
+      <img src="https://avatars.githubusercontent.com/u/9919?s=280&v=4" alt="Profile">
+      <h4>John Doe</h4>
+      <p><i class="fas fa-code"></i> Software Engineer</p>
+    </div>
+
+    <div class="card-body">
+      <div class="contact-info">
+        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fas fa-envelope"></i> johndoe@email.com</p>
+        <p><i class="fas fa-globe"></i> www.johndoe.dev</p>
+      </div>
+      <div class="social-icons">
+        <a href="#" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="qr-container">
+      <a href="https://www.johndoe.dev" target="_blank">
+        <div id="qrcode"></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+</body>
+</html>

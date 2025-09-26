@@ -1,0 +1,182 @@
+body {
+  background: linear-gradient(135deg, #dfe9f3, #ffffff);
+  font-family: 'Segoe UI', sans-serif;
+  padding: 40px;
+  transition: background 0.5s ease;
+}
+
+/* Glassmorphism Card */
+.business-card {
+  max-width: 420px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 2px solid rgba(255,255,255,0.3);
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: 0.3s, transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.business-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+}
+
+/* Animated Gradient Border */
+.business-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(270deg, #6a11cb, #2575fc, #00c6ff, #0072ff);
+  background-size: 400% 400%;
+  animation: borderMove 8s ease infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+@keyframes borderMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.card-header {
+  text-align: center;
+  padding: 30px 20px 20px;
+  color: #fff;
+}
+
+.card-header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-bottom: 12px;
+  object-fit: cover;
+}
+
+.card-header h4 {
+  margin: 5px 0;
+  font-weight: 700;
+  color: #fff;
+  font-size: clamp(18px, 2vw, 24px);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.card-header p {
+  font-size: 14px;
+  font-family: "Courier New", monospace;
+  color: #e0e0e0;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.card-body {
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.contact-info p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #e0e0e0;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.contact-info p:hover {
+  color: #00ffcc;
+  transform: translateX(5px);
+}
+
+.contact-info i {
+  color: #00c6ff;
+  margin-right: 8px;
+}
+
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 22px;
+  color: #00c6ff;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #00ffcc;
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* QR Section */
+.qr-container {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.1);
+  padding: 10px;
+  border-radius: 12px;
+}
+
+/* Dark Mode */
+body.dark {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+body.dark .business-card {
+  background: rgba(20,20,30,0.6);
+  border: 2px solid rgba(255,255,255,0.1);
+}
+
+body.dark .card-header h4,
+body.dark .contact-info p {
+  color: #ffffff;
+}
+
+/* Toggle button */
+.toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #00c6ff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.toggle-btn:hover {
+  background: #00ffcc;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .business-card {
+    max-width: 90%;
+    padding-bottom: 80px;
+  }
+
+  .card-header img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .qr-container {
+    bottom: 10px;
+  }
+}
